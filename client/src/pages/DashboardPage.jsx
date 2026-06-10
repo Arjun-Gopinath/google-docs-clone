@@ -99,7 +99,7 @@ export default function DashboardPage() {
   useEffect(() => { loadDocs(); }, []);
 
   async function createDoc() {
-    const { data } = await api.post('/documents');
+    const { data } = await api.post('/documents', {});
     navigate(`/documents/${data.id}`);
   }
 

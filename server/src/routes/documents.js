@@ -112,7 +112,7 @@ function createDocumentsRouter(db) {
 
   // Create document
   router.post('/', (req, res) => {
-    const { title = 'Untitled Document' } = req.body;
+    const { title = 'Untitled Document' } = req.body || {};
     const result = db
       .prepare('INSERT INTO documents (title, owner_id) VALUES (?, ?)')
       .run(title, req.user.id);
@@ -137,7 +137,7 @@ function createDocumentsRouter(db) {
       return res.status(403).json({ error: 'You only have view access to this document' });
     }
 
-    const { title, content } = req.body;
+    const { title, content } = req.body || {};
     const updates = [];
     const values = [];
 
@@ -170,7 +170,7 @@ function createDocumentsRouter(db) {
     if (!access) return res.status(404).json({ error: 'Document not found' });
     if (access.role !== 'owner') return res.status(403).json({ error: 'Only the owner can share this document' });
 
-    const { email, permission = 'edit' } = req.body;
+    const { email, permission = 'edit' } = req.body || {};
     if (!email) return res.status(400).json({ error: 'Email is required' });
 
     const targetUser = db.prepare('SELECT id, email, name FROM users WHERE email = ?').get(email);
