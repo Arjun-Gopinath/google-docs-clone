@@ -1,0 +1,176 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #202124;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #5f6368;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.closeBtn:hover {
+  background: #f1f3f4;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 9px 12px;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.emailInput:focus {
+  border-color: #4285F4;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+.shareBtn {
+  background: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.shareBtn:hover:not(:disabled) {
+  background: #3367d6;
+}
+
+.shareBtn:disabled {
+  opacity: 0.6;
+}
+
+.error {
+  font-size: 13px;
+  color: #c5221f;
+  margin: 0 0 12px;
+}
+
+.success {
+  font-size: 13px;
+  color: #137333;
+  margin: 0 0 12px;
+}
+
+.shareList {
+  border-top: 1px solid #e8eaed;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.shareListTitle {
+  font-size: 12px;
+  color: #5f6368;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px;
+  font-weight: 500;
+}
+
+.shareItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.shareAvatar {
+  width: 32px;
+  height: 32px;
+  background: #4285F4;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.shareInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.shareName {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #202124;
+}
+
+.shareEmail {
+  display: block;
+  font-size: 12px;
+  color: #5f6368;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sharePermission {
+  font-size: 12px;
+  color: #5f6368;
+  background: #f1f3f4;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+
+.revokeBtn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #c5221f;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.revokeBtn:hover {
+  background: #fce8e6;
+}
