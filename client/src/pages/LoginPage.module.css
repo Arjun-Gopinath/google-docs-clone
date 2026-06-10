@@ -1,0 +1,143 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: 500;
+  color: #202124;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #202124;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  color: #5f6368;
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+.error {
+  background: #fce8e6;
+  color: #c5221f;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  color: #5f6368;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.field input:focus {
+  border-color: #4285F4;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 11px;
+  background: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #3367d6;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.testAccounts {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e8eaed;
+}
+
+.testAccounts p {
+  font-size: 13px;
+  color: #5f6368;
+  margin: 0 0 10px;
+}
+
+.testAccounts code {
+  background: #f1f3f4;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.accountList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.accountChip {
+  text-align: left;
+  background: #f1f3f4;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #202124;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.accountChip:hover {
+  background: #e8eaed;
+}

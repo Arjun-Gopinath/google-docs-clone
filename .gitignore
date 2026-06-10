@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+*/node_modules
+node_modules/
+
+# Build output
+dist
+dist-ssr
+client/dist/
+*.local
+
+# Environment files — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Database files
+server/data/*.db
+server/data/*.db-wal
+server/data/*.db-shm
+
+# Uploaded files are transient
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Cypress artifacts
+cypress/videos/
+cypress/screenshots/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
