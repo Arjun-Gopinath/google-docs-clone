@@ -110,7 +110,7 @@ A single Render **Web Service** serves both the API and the React build.
 
 **Build command:**
 ```
-cd client && npm install && npm run build && cd ../server && npm install
+cd client && npm install --include=dev && npm run build && cd ../server && npm install --include=dev
 ```
 
 **Start command:**
@@ -121,11 +121,7 @@ node server/src/index.js
 **Environment variables to set in Render dashboard:**
 - `JWT_SECRET` — any long random string
 - `NODE_ENV` — `production`
+- `NODE_VERSION` — `22`
 - `PORT` — leave unset (Render sets this automatically)
 
-**Persistent disk:** Mount at `/opt/render/project/src/server/data` so the SQLite DB survives deploys.
-
-After first deploy, run the seed manually via Render Shell:
-```bash
-node server/src/db/seed.js
-```
+> **Note on persistence:** The free tier uses ephemeral storage — the SQLite database resets on each redeploy. Test accounts are re-seeded automatically on startup so the app is always usable, but documents created between deploys will not survive. For production use, swap the `getDb()` function for a hosted Postgres instance.

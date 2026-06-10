@@ -17,7 +17,7 @@
 
 **TipTap over Quill/Slate:** TipTap has TypeScript support, a well-documented extension API, and auto-save works naturally with `onUpdate`. Content is stored as ProseMirror JSON, which is stable and easily round-trips through the DB.
 
-**SQLite over Postgres:** No external DB setup required for reviewers. `better-sqlite3` is synchronous, which plays well with Express middleware patterns. Swapping to Postgres would only require changing the `getDb()` function — the rest of the code is SQL-agnostic.
+**SQLite over Postgres:** No external DB setup required for reviewers. `better-sqlite3` is synchronous, which plays well with Express middleware patterns. Swapping to Postgres would only require changing the `getDb()` function — the rest of the code is SQL-agnostic. The tradeoff on Render's free tier is ephemeral storage: the DB resets on each redeploy. Test accounts are auto-seeded on every cold start so the app stays usable, and this is documented in the README.
 
 **Single Render service:** Express serves `client/dist` as static files in production. This avoids CORS entirely and simplifies deployment to a single URL. The tradeoff is a slightly slower cold start on the free tier.
 

@@ -25,7 +25,7 @@
 | File upload (.txt, .md, .docx) | ✅ Complete | .pdf and others return 400 |
 | Document sharing (grant / revoke) | ✅ Complete | Owner can share by email |
 | Owned vs shared distinction | ✅ Complete | Dashboard sections + Shared badge |
-| Persistence after refresh | ✅ Complete | SQLite, TipTap JSON |
+| Persistence after refresh | ✅ Complete | SQLite + TipTap JSON; resets on redeploy (free tier ephemeral disk) |
 | Backend tests (Jest + Supertest) | ✅ Complete | 19 tests |
 | Frontend component tests (Vitest + RTL) | ✅ Complete | 14 tests |
 | E2E tests (Cypress) | ✅ Complete | 4 spec files |
