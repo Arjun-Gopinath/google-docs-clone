@@ -34,12 +34,10 @@ const isMain = process.argv[1] && require('path').resolve(process.argv[1]) === r
 if (isMain) {
   const db = getDb();
 
-  // Auto-seed in development if no users exist
-  if (process.env.NODE_ENV !== 'production') {
-    const count = db.prepare('SELECT COUNT(*) as c FROM users').get();
-    if (count.c === 0) {
-      require('./db/seed');
-    }
+  // Auto-seed if no users exist (runs on every cold start in production)
+  const count = db.prepare('SELECT COUNT(*) as c FROM users').get();
+  if (count.c === 0) {
+    require('./db/seed');
   }
 
   const app = createApp(db);
