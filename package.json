@@ -1,0 +1,26 @@
+{
+  "name": "google-docs-clone",
+  "version": "1.0.0",
+  "description": "Lightweight collaborative document editor — take-home assignment",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "cypress run",
+    "test:server": "npm --prefix server test",
+    "test:client": "npm --prefix client test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arjun-Gopinath/google-docs-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arjun-Gopinath/google-docs-clone/issues"
+  },
+  "homepage": "https://github.com/Arjun-Gopinath/google-docs-clone#readme",
+  "devDependencies": {
+    "cypress": "^15.17.0"
+  }
+}
