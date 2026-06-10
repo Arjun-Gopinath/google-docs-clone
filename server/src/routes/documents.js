@@ -76,7 +76,12 @@ function createDocumentsRouter(db) {
   });
 
   // Upload file → new document
-  router.post('/upload', upload.single('file'), async (req, res) => {
+  router.post('/upload', (req, res, next) => {
+    upload.single('file')(req, res, (err) => {
+      if (err) return res.status(400).json({ error: err.message });
+      next();
+    });
+  }, async (req, res) => {
     if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
 
     const ext = path.extname(req.file.originalname).toLowerCase();
