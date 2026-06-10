@@ -9,13 +9,23 @@ const { createDocumentsRouter } = require('./routes/documents');
 function createApp(db) {
   const app = express();
 
-  app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+  // In production the client is served from the same origin, so CORS is only
+  // needed in development (Vite dev server on a different port).
+  if (process.env.NODE_ENV !== 'production') {
+    app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+  }
   app.use(express.json({ limit: '10mb' }));
 
   app.use('/api/auth', createAuthRouter(db));
   app.use('/api/documents', createDocumentsRouter(db));
 
   app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
+
+  // eslint-disable-next-line no-unused-vars
+  app.use((err, req, res, next) => {
+    console.error(`[${req.method} ${req.path}]`, err.message, err.stack);
+    res.status(500).json({ error: err.message || 'Internal server error' });
+  });
 
   // Serve React build in production
   if (process.env.NODE_ENV === 'production') {
